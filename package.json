@@ -1,0 +1,73 @@
+{
+  "name": "dont-cross-line",
+  "displayName": "Don't Cross Line",
+  "description": "Visual line length indicator with multibyte character support",
+  "version": "0.0.1",
+  "publisher": "himadajin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/himadajin/dont-cross-line"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dontCrossLine.toggle",
+        "title": "Toggle Don't Cross Line"
+      }
+    ],
+    "configuration": {
+      "title": "Don't Cross Line",
+      "properties": {
+        "dontCrossLine.maxLength": {
+          "type": "number",
+          "default": 80,
+          "description": "Maximum line length (visual width)",
+          "minimum": 1
+        },
+        "dontCrossLine.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable the line length indicator"
+        },
+        "dontCrossLine.warningColor": {
+          "type": "string",
+          "default": "#ff6b6b",
+          "description": "Warning color for exceeded lines (hex color)",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "dontCrossLine.excludeLanguages": {
+          "type": "array",
+          "default": [
+            "markdown",
+            "plaintext"
+          ],
+          "description": "Language IDs to exclude from line length checking",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4",
+    "@vscode/vsce": "^2.15.0"
+  }
+}
