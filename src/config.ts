@@ -8,7 +8,7 @@ export interface LineLengthConfig {
 }
 
 export function getConfiguration(): LineLengthConfig {
-  const config = vscode.workspace.getConfiguration("dontCrossLine");
+  const config = vscode.workspace.getConfiguration("dont-cross-line");
 
   return {
     maxLength: config.get<number>("maxLength", 80),

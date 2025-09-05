@@ -21,31 +21,31 @@
   "contributes": {
     "commands": [
       {
-        "command": "dontCrossLine.toggle",
+        "command": "dont-cross-line.toggle",
         "title": "Toggle Don't Cross Line"
       }
     ],
     "configuration": {
       "title": "Don't Cross Line",
       "properties": {
-        "dontCrossLine.maxLength": {
+        "dont-cross-line.maxLength": {
           "type": "number",
           "default": 80,
           "description": "Maximum line length (visual width)",
           "minimum": 1
         },
-        "dontCrossLine.enabled": {
+        "dont-cross-line.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Enable/disable the line length indicator"
         },
-        "dontCrossLine.warningColor": {
+        "dont-cross-line.warningColor": {
           "type": "string",
           "default": "#ff6b6b",
           "description": "Warning color for exceeded lines (hex color)",
           "pattern": "^#[0-9a-fA-F]{6}$"
         },
-        "dontCrossLine.languages": {
+        "dont-cross-line.languages": {
           "type": "array",
           "default": [],
           "description": "Language IDs where the indicator is enabled.",

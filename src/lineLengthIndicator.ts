@@ -58,7 +58,7 @@ export class LineLengthIndicator {
     // Configuration change listener
     this.disposables.push(
       vscode.workspace.onDidChangeConfiguration((event) => {
-        if (event.affectsConfiguration("dontCrossLine")) {
+        if (event.affectsConfiguration("dont-cross-line")) {
           this.config = normalizeConfiguration(getConfiguration());
           this.createDecorationType();
           this.updateAllEditors();
@@ -150,7 +150,7 @@ export class LineLengthIndicator {
     this.config.enabled = !this.config.enabled;
 
     // Update the configuration
-    const config = vscode.workspace.getConfiguration("dontCrossLine");
+    const config = vscode.workspace.getConfiguration("dont-cross-line");
     config.update(
       "enabled",
       this.config.enabled,

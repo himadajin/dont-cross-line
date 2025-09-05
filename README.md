@@ -11,10 +11,10 @@ A VSCode extension that provides visual line length indicators with proper multi
 
 The extension provides the following configuration options:
 
-- `dontCrossLine.maxLength` (default: 80): Maximum line length in visual width
-- `dontCrossLine.enabled` (default: true): Enable/disable the extension
-- `dontCrossLine.warningColor` (default: "#ff6b6b"): Color for highlighting exceeded portions
-- `dontCrossLine.languages` (default: `[]`): Language IDs where the indicator is enabled.
+- `dont-cross-line.maxLength` (default: 80): Maximum line length in visual width
+- `dont-cross-line.enabled` (default: true): Enable/disable the extension
+- `dont-cross-line.warningColor` (default: "#ff6b6b"): Color for highlighting exceeded portions
+- `dont-cross-line.languages` (default: `[]`): Language IDs where the indicator is enabled.
 
 ## Commands
 

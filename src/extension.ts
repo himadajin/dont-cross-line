@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Register the toggle command
     const toggleCommand = vscode.commands.registerCommand(
-      "dontCrossLine.toggle",
+      "dont-cross-line.toggle",
       () => {
         if (lineLengthIndicator) {
           lineLengthIndicator.toggle();
