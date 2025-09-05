@@ -7,6 +7,7 @@ tmp
 .claude
 .vscode
 .vscode-test
+AGENTS.md
 
 package-lock.json
 npm-debug.log
