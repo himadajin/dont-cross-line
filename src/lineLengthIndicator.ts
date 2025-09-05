@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { calculateVisualWidth, findExceedingPosition } from "./characterWidth";
 import {
   getConfiguration,
-  isLanguageExcluded,
+  isLanguageAllowed,
   normalizeConfiguration,
   LineLengthConfig,
 } from "./config";
@@ -105,7 +105,7 @@ export class LineLengthIndicator {
     }
 
     const languageId = editor.document.languageId;
-    if (isLanguageExcluded(languageId, this.config.excludeLanguages)) {
+    if (!isLanguageAllowed(languageId, this.config.languages)) {
       return false;
     }
 

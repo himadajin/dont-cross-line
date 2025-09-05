@@ -45,13 +45,10 @@
           "description": "Warning color for exceeded lines (hex color)",
           "pattern": "^#[0-9a-fA-F]{6}$"
         },
-        "dontCrossLine.excludeLanguages": {
+        "dontCrossLine.languages": {
           "type": "array",
-          "default": [
-            "markdown",
-            "plaintext"
-          ],
-          "description": "Language IDs to exclude from line length checking",
+          "default": [],
+          "description": "Language IDs where the indicator is enabled.",
           "items": {
             "type": "string"
           }

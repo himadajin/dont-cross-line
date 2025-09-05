@@ -14,7 +14,7 @@ The extension provides the following configuration options:
 - `dontCrossLine.maxLength` (default: 80): Maximum line length in visual width
 - `dontCrossLine.enabled` (default: true): Enable/disable the extension
 - `dontCrossLine.warningColor` (default: "#ff6b6b"): Color for highlighting exceeded portions
-- `dontCrossLine.excludeLanguages` (default: ["markdown", "plaintext"]): Languages to exclude from checking
+- `dontCrossLine.languages` (default: `[]`): Language IDs where the indicator is enabled.
 
 ## Commands
 

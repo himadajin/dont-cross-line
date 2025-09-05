@@ -4,7 +4,7 @@ export interface LineLengthConfig {
   maxLength: number;
   enabled: boolean;
   warningColor: string;
-  excludeLanguages: string[];
+  languages: string[];
 }
 
 export function getConfiguration(): LineLengthConfig {
@@ -14,18 +14,12 @@ export function getConfiguration(): LineLengthConfig {
     maxLength: config.get<number>("maxLength", 80),
     enabled: config.get<boolean>("enabled", true),
     warningColor: config.get<string>("warningColor", "#ff6b6b"),
-    excludeLanguages: config.get<string[]>("excludeLanguages", [
-      "markdown",
-      "plaintext",
-    ]),
+    languages: config.get<string[]>("languages", []),
   };
 }
 
-export function isLanguageExcluded(
-  languageId: string,
-  excludeLanguages: string[]
-): boolean {
-  return excludeLanguages.includes(languageId);
+export function isLanguageAllowed(languageId: string, languages: string[]): boolean {
+  return languages.length > 0 && languages.includes(languageId);
 }
 
 export function isValidHexColor(color: string): boolean {
@@ -41,6 +35,6 @@ export function normalizeConfiguration(
     warningColor: isValidHexColor(config.warningColor)
       ? config.warningColor
       : "#ff6b6b",
-    excludeLanguages: config.excludeLanguages,
+    languages: Array.isArray(config.languages) ? config.languages : [],
   };
 }
